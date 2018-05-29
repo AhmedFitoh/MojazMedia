@@ -37,7 +37,7 @@ class WebService {
     
     func post()  {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        let debugRequest =  Alamofire.request(url, method: .post, parameters: params ,  encoding: JSONEncoding.default ).responseJSON { (response ) in
+         Alamofire.request(url, method: .post, parameters: params ,  encoding: JSONEncoding.default ).responseJSON { (response ) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             switch response.result
             {

@@ -9,7 +9,11 @@
 import UIKit
 import SwiftyJSON
 
-class HomeScreen: UIViewController {
+class HomeScreen: UIViewController  , UITableViewDataSource {
+    
+    @IBOutlet weak var itemTable: UITableView!
+
+    
     var ItemList : [PhotoItem] = []
     var lastItem = 0
     let offset   = 100
@@ -19,6 +23,18 @@ class HomeScreen: UIViewController {
         ServiceHandler().getPhotos(delegate: self)
     }
 
+    // Mark: TableView DataSource
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ItemList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as! ItemCell
+        cell.setCell(item: ItemList [indexPath.row])
+        return cell
+    }
+    
 }
 
 extension HomeScreen : DataFetcherProtocol {
@@ -37,8 +53,10 @@ extension HomeScreen : DataFetcherProtocol {
                 else {
                         let newItem = PhotoItem(albumId: subJson["albumId"].intValue, id: subJson["id"].intValue, title: subJson["title"].stringValue, photoUrl: subJson["url"].stringValue, thumbnailUrl: subJson["thumbnailUrl"].stringValue)
                         ItemList.append(newItem)
+                        lastItem += 1
                 }
             }
+            itemTable.reloadData()
         }
     }
  
