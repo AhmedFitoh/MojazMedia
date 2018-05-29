@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct PhotoItem {
     var albumId      : Int
     var id           : Int
