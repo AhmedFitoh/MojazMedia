@@ -8,17 +8,16 @@
 
 
 import Foundation
-import Alamofire
 
 class ServiceHandler{
     
  
     lazy var BASE_URL = "https://jsonplaceholder.typicode.com/"
-    lazy var URL_GetNewItems = "/photos"
+    lazy var URL_GetPhotos = "photos"
   
     func getPhotos ( delegate:DataFetcherProtocol){
-        let service =  WebService.init(url: BASE_URL+URL_GetActiveExtraCharges, params: [:], fetchDelegate: delegate)
-        service.post()
+        let service =  WebService.init(url: BASE_URL+URL_GetPhotos, params: [:], fetchDelegate: delegate)
+        service.get()
     }
 
 
