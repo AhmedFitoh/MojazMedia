@@ -18,25 +18,24 @@ class HomeScreen: UIViewController  , UITableViewDataSource , UITableViewDelegat
     var selectedItems : [PhotoItem] = []
     var lastItem = 0
     let offset   = 20
-    var filterdScreen = false
+    var filterdScreen = false // first screen = false , second screen =  true
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadItems()
-        
     }
 
     func loadItems (){
         if !filterdScreen {
             ServiceHandler().getPhotos(delegate: self)
         }
-
     }
     
     @IBAction func filterAction(_ sender: UIButton) {
         if selectedItems.isEmpty {
             // show message
+            viewAlert(msg: "You didn't select any items")
             return
         }
         let nextVc = storyboard?.instantiateViewController(withIdentifier: "homeScreen") as! HomeScreen
@@ -77,6 +76,7 @@ class HomeScreen: UIViewController  , UITableViewDataSource , UITableViewDelegat
         if cell.selectPic.image == #imageLiteral(resourceName: "unchecked") {
             if selectedItems.count == 10 {
                 // show message to the user
+                viewAlert(msg: "You can select 10 items only")
                 return
             }
             cell.selectPic.image = #imageLiteral(resourceName: "check_red")
@@ -90,8 +90,6 @@ class HomeScreen: UIViewController  , UITableViewDataSource , UITableViewDelegat
                 return true
             }
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

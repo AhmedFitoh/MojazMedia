@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C2909040255D263B4EEEEB7 /* Pods_Task_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 296FD97D6D910D3A99844C6F /* Pods_Task_Assignment.framework */; };
+		9C20A8D220BE04E800883E45 /* UiviewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20A8D120BE04E800883E45 /* UiviewControllerExt.swift */; };
 		9CAAE60B20BDA2FB00DD95BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAE60A20BDA2FB00DD95BA /* AppDelegate.swift */; };
 		9CAAE60D20BDA2FC00DD95BA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAE60C20BDA2FC00DD95BA /* HomeScreen.swift */; };
 		9CAAE61020BDA2FC00DD95BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAAE60E20BDA2FC00DD95BA /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		04FCE2AB568DF1709148A265 /* Pods-Task Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task Assignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Task Assignment/Pods-Task Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		296FD97D6D910D3A99844C6F /* Pods_Task_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Task_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C20A8D120BE04E800883E45 /* UiviewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiviewControllerExt.swift; sourceTree = "<group>"; };
 		9CAAE60720BDA2FB00DD95BA /* Task Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAAE60A20BDA2FB00DD95BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CAAE60C20BDA2FC00DD95BA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		9CAAE61F20BDAA6D00DD95BA /* Extinisons */ = {
 			isa = PBXGroup;
 			children = (
+				9C20A8D120BE04E800883E45 /* UiviewControllerExt.swift */,
 			);
 			path = Extinisons;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				9CAAE60D20BDA2FC00DD95BA /* HomeScreen.swift in Sources */,
 				9CAAE60B20BDA2FB00DD95BA /* AppDelegate.swift in Sources */,
+				9C20A8D220BE04E800883E45 /* UiviewControllerExt.swift in Sources */,
 				9CAAE62520BDAF4600DD95BA /* ServiceHandler.swift in Sources */,
 				9CAAE62A20BDB1C000DD95BA /* DataFetcher.swift in Sources */,
 				9CAAE62D20BDD53600DD95BA /* ItemCell.swift in Sources */,
