@@ -13,6 +13,7 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var Pic: UIImageView!
     @IBOutlet weak var titleLBL: UILabel!
     
+    @IBOutlet weak var selectPic: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,11 +24,20 @@ class ItemCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setCell (item : PhotoItem) {
+    func setCell (item : PhotoItem , selected : Bool , showSelection : Bool) {
+        if showSelection {
+        if selected {
+            selectPic.image = #imageLiteral(resourceName: "check_red")
+        }else {
+            selectPic.image = #imageLiteral(resourceName: "unchecked")
+            }} else {
+            selectPic.isHidden = true
+        }
         titleLBL.text = item.title
         let imageURL : URL = URL (string: item.thumbnailUrl)!
         Pic.sd_setImage(with: imageURL, completed: nil)
         Pic.layer.cornerRadius = 10
+        self.selectionStyle = .none
     }
 
 }
